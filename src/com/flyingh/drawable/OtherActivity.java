@@ -1,6 +1,7 @@
 package com.flyingh.drawable;
 
 import android.graphics.drawable.LevelListDrawable;
+import android.graphics.drawable.TransitionDrawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -17,6 +18,10 @@ public class OtherActivity extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_other);
 		imageView = (ImageView) findViewById(R.id.otherImageView);
+		ImageView imageView3 = (ImageView) findViewById(R.id.thirdImageView);
+		TransitionDrawable drawable = (TransitionDrawable) imageView3.getDrawable();
+		drawable.startTransition(2000);
+
 	}
 
 	public void change(View view) {
