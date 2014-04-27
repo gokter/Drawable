@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item android:drawable="@drawable/g">
+    </item>
+    <item
+        android:id="@+id/secondImage"
+        android:bottom="30dp"
+        android:drawable="@drawable/aaaaa"
+        android:left="20dp"
+        android:right="395dp"
+        android:top="30dp">
+    </item>
+
+</layer-list>
