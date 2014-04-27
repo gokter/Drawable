@@ -26,6 +26,10 @@
             android:name="com.flyingh.drawable.OtherActivity"
             android:label="@string/title_activity_other" >
         </activity>
+        <activity
+            android:name="com.flyingh.drawable.ThirdActivity"
+            android:label="@string/title_activity_third" >
+        </activity>
     </application>
 
 </manifest>

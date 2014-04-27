@@ -1,8 +1,6 @@
 package com.flyingh.drawable;
 
-import android.content.Intent;
-import android.graphics.drawable.LevelListDrawable;
-import android.graphics.drawable.TransitionDrawable;
+import android.graphics.drawable.ClipDrawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -10,35 +8,27 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
-public class OtherActivity extends ActionBarActivity {
+public class ThirdActivity extends ActionBarActivity {
 
 	private ImageView imageView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_other);
-		imageView = (ImageView) findViewById(R.id.otherImageView);
-		ImageView imageView3 = (ImageView) findViewById(R.id.thirdImageView);
-		TransitionDrawable drawable = (TransitionDrawable) imageView3.getDrawable();
-		drawable.startTransition(2000);
-
+		setContentView(R.layout.activity_third);
+		imageView = (ImageView) findViewById(R.id.fifthImageView);
 	}
 
 	public void change(View view) {
-		LevelListDrawable levelListDrawable = (LevelListDrawable) imageView.getDrawable();
-		levelListDrawable.setLevel(15);
-	}
-
-	public void next(View view) {
-		startActivity(new Intent(this, ThirdActivity.class));
+		ClipDrawable drawable = (ClipDrawable) imageView.getDrawable();
+		drawable.setLevel(drawable.getLevel() + 1000);
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.other, menu);
+		getMenuInflater().inflate(R.menu.third, menu);
 		return true;
 	}
 
