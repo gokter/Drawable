@@ -1,7 +1,6 @@
 package com.flyingh.drawable;
 
-import android.content.Intent;
-import android.graphics.drawable.LayerDrawable;
+import android.graphics.drawable.LevelListDrawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -9,33 +8,27 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
-public class MainActivity extends ActionBarActivity {
+public class OtherActivity extends ActionBarActivity {
 
 	private ImageView imageView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-		imageView = (ImageView) findViewById(R.id.imageView);
+		setContentView(R.layout.activity_other);
+		imageView = (ImageView) findViewById(R.id.otherImageView);
 	}
 
 	public void change(View view) {
-		// LayerDrawable drawable = (LayerDrawable) imageView.getDrawable();(no effect)
-		LayerDrawable drawable = (LayerDrawable) getResources().getDrawable(R.drawable.layer_list);
-		drawable.setDrawableByLayerId(R.id.secondImage, getResources().getDrawable(R.drawable.f));
-		imageView.setImageDrawable(drawable);
-	}
-
-	public void next(View view) {
-		startActivity(new Intent(this, OtherActivity.class));
+		LevelListDrawable levelListDrawable = (LevelListDrawable) imageView.getDrawable();
+		levelListDrawable.setLevel(15);
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
+		getMenuInflater().inflate(R.menu.other, menu);
 		return true;
 	}
 
